@@ -7,9 +7,9 @@ var express     = require('express');
 
 var server      = express();
     router      = express.Router();
-    server.use(bodyParser.urlencoded({ extended: false }))
-    server.use(bodyParser.json())
-    server.use(cors())
+    server.use(bodyParser.urlencoded({ extended: false }));
+    server.use(bodyParser.json());
+    server.use(cors());
     server.use('/', require('./routes'));
 
 server.listen(config.server.port, config.server.ip, function(){

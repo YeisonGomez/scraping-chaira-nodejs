@@ -12,21 +12,21 @@ var params = {
     }
 };
 
-exports.login = function(req, res) {
+exports.login = function (req, res) {
     var credentials = [req.query.user, req.query.password];
 
     console.log(credentials);
-    chaira.loginChaira(params, credentials[0], credentials[1], function(data, client, program) {
+    chaira.loginChaira(params, credentials[0], credentials[1], function (data, client, program) {
         if (data == "user valid") {
             var menuHorario = {
                 menu1: ["Estudiante", "span"],
                 menu2: ["Información académica", "span"],
                 menu3: ["Horario", "span"]
             };
-            menu.openMenu(client, menuHorario, function(resMenu, html, client2) { //Open Iframe
+            menu.openMenu(client, menuHorario, function (resMenu, html, client2) { //Open Iframe
                 program.kill(); //close Phantomjs
                 if (resMenu == "Open iframe") {
-                    parser.schedule(client2, html, function(dataParser) { //Parseo
+                    parser.schedule(client2, html, function (dataParser) { //Parseo
                         console.log("finish\n===========================");
                         res.status(200).send(dataParser);
                     });
