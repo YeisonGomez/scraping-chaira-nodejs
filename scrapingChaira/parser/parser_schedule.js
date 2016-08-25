@@ -1,6 +1,6 @@
 var cheerio = require('cheerio');
 
-module.exports.schedule = function(client, html, callback) {
+module.exports.schedule = function (client, html, callback) {
     console.log("Parseando...");
     $ = cheerio.load(html);
 
@@ -43,8 +43,8 @@ module.exports.schedule = function(client, html, callback) {
         codeStudent: $('#codigo').html(),
         program: $('#programa').html(),
         period: $('#periodo').html(),
-        listTeachers : listDocent,
+        listTeachers: listDocent,
         schedule: schedule
     };
     callback(informationSchedule);
-}
+};
