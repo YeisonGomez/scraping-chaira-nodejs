@@ -1,0 +1,23 @@
+{
+  "name": "scraping_chaira",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "phantomjs-prebuilt": "~2.1.12",
+    "webdriverio": "~4.2.7",
+    "express": "~4.14.0",
+    "body-parser": "~1.15.2",
+    "cors": "~2.7.1",
+    "fs": "0.0.2",
+    "request": "~2.74.0",
+    "cheerio": "~0.20.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "start",
+    "start": "node server.js"
+  },
+  "author": "Yeison Gomez",
+  "license": "BSD-2-Clause"
+}
